@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM130PWZB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BM130PWZB5');
+  </script>
+  <meta charset="utf-8">
+  <meta name="description" content="LocoFormer">
+  <meta name="keywords" content="Locomotion, Biomechanics, Energetics, Reinforcement Learning, Emergent Behaviors, Foundation Models, Robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LocoFormer: Generalist Locomotion via Long-Context Adaptation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="./static/js/ajax.googleapis.com_ajax_libs_jquery_3.5.1_jquery.min.js"></script>
+  <script src="./static/js/isInViewport.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link rel="icon" href="./favicon.ico?">
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body no-bottom-padding">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            LocoFormer: Generalist Locomotion via <br> Long-Context Adaptation
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <span class="brmod" style="color:rgb(183, 0, 0)"><b>In Submission</b></span>
+            </span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a target="_blank" href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a target="_blank" href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- twitter Link. -->
+              <!-- <span class="link-block">
+                <a target="_blank" href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Summary</span>
+                </a>
+              </span> -->
+            </div>
+
+          </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="padding-bottom: 0">
+  <div class="container">
+    <!-- <div id="method_video" class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds no-bottom-padding">
+          <video controls src="./camera-ready-video-v2-compressed.mp4" style="border: 1px solid #bbb; border-radius: 10px; width: 100%;">
+      </div>
+    </div> -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humans and animals exhibit flexible locomotion strategies, such as learning to walk within minutes, and efficient adaptation to changes in morphology. In contrast, modern locomotion controllers are manually tuned for specific embodiments. In this paper, we present <i>LocoFormer</i>, a generalist policy that can control previously unseen legged and wheeled robots, even without precise knowledge of their kinematics. LocoFormer is able to adapt to changes in morphology and dynamics at test time. We find that two key choices enable adaptation. First, we train massive scale RL on procedurally generated robots with aggressive domain randomization. Second, in contrast to previous policies that are myopic with short context lengths, we extend context by orders of magnitude to span episode boundaries. We deploy the same LocoFormer to varied robots and show robust control even with large disturbances such as weight change and motor failures. In extreme scenarios, we see emergent adaptation across episodes, LocoFormer learns from falls in early episodes to improve control strategies in later ones. We believe that this simple, yet general recipe can be used to train foundation models for other robotic skills in the future.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--/ Paper video. -->
+  <br/>
+  <br/>
+  
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Emergent Adaptation Behaviors</h2>
+        
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;">Adaptation Across Trials</h3>
+
+        <tr>
+          <td>
+            <h2 class="subtitle">
+              LocoFormer learns continuously through online experience. The policy can learn from falls in early trials to improve control strategies in later ones. Once an effective strategy is discovered, LocoFormer retains and leverages it in future trials.
+            </h2>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video controls playsinline autoplay loop muted src="./resources/videos_compressed/demo_Go2_across_trial.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video controls playsinline autoplay loop muted src="./resources/videos_compressed/demo_H1_across_trial.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+
+        <br>
+
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;">Adaptation to Large Disturbances</h3>
+
+        <tr>
+          <td>
+            <h2 class="subtitle">
+              LocoFormer begins without precise knowledge about the target embodiment, and dynamically builds stable, embodiment-specific representations online. When facing large disturbances—such as morphology change, motor failures, or weight change—it has the ability to rebuild such representations to achieve online adaptation.
+            </h2>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video controls playsinline autoplay loop muted src="./resources/videos_compressed/demo_Go2_morphology.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video controls playsinline autoplay loop muted src="./resources/videos_compressed/demo_Go2_morphology2.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video controls playsinline autoplay loop muted src="./resources/videos_compressed/demo_Go2W-biped.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video controls playsinline autoplay loop muted src="./resources/videos_compressed/demo_G1_push.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video controls playsinline autoplay loop muted src="./resources/videos_compressed/demo_Go2W.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video controls playsinline autoplay loop muted src="./resources/videos_compressed/demo_Go2_biped.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+
+        <br>
+
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;">Robust Humanoid Walking</h3>
+
+        <tr>
+          <td>
+            <h2 class="subtitle">
+              LocoFormer effectively adapts to diverse humanoid morphologies, enabling robust and stable walking performance.
+            </h2>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video controls playsinline autoplay loop muted src="./resources/videos_compressed/demo_H1.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video controls playsinline autoplay loop muted src="./resources/videos_compressed/demo_G1_walking.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+
+        <br>
+
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;">Specialist Policy Fails to Adapt</h3>
+
+        <tr>
+          <td>
+            <h2 class="subtitle">
+              LocoFormer's adaptability stems from long-term memory and large-scale reinforcement learning on diverse morphologies with aggressive domain randomization. In contrast, policies specialized for a single embodiment typically fail to adapt effectively to significant morphological changes.
+            </h2>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video controls playsinline autoplay loop muted src="./resources/videos_compressed/specialist_Go2_1.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video controls playsinline autoplay loop muted src="./resources/videos_compressed/specialist_Go2_2.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+
+      </div> 
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">LocoFormer Overview</h2>
+        <tr>
+          <td>
+              <h2 class="subtitle">
+                    To enable long-context adaptation, we allow LocoFormer to attend to states from prior trials. We use a transformer-XL backbone, that divides context into fixed-length segments. When processing the current segment, keys and values are also computed from states in the previous (cached) segment as well, but gradients are not propagated (<span style="color:rgb(100,100,255)">blue lines</span>). As the number of layers increases, this allows the TXL to use information even segments prior to the cached one (<span style="color:rgb(75, 217, 75)">green lines</span>). During training, we let the policy run multiple trials in an episode. Memory persists across trials, and the objective is to maximize the expected cumulative reward across the entire episode.
+              </h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="row">
+              <img src="./resources/figures/method_fig.png" width="85%"
+            style="border-radius:10px; display: block; margin: 0 auto;"></img>
+            </div>
+            <br>
+            <br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                <h2 class="subtitle">
+                  We train LocoFormer with large-scale RL on a variety of procedurally generated robots with aggressive domain randomization.
+                </h2>
+                  <video controls playsinline autoplay loop muted src="./resources/simulation/sim_training.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <h2 class="subtitle">
+                  LocoFormer can be deployed to a wide variety of previously unseen robots, requiring just minutes for setup and seconds to adapt.
+                </h2>
+                <video controls playsinline autoplay loop muted src="./resources/simulation/sim_eval.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Failure Cases</h2>
+        <tr>
+          <td>
+              <h2 class="subtitle">
+                  In certain challenging morphologies, LocoFormer may not adapt quickly enough to sudden online disturbances. This occurs partly because, during training, the robot’s morphology and specific physical properties—such as the center of mass—remain fixed throughout each episode. Nevertheless, after such failures, LocoFormer can initiate a new trial and quickly adapt by leveraging memory from previous unsuccessful experiences.
+              </h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video controls playsinline autoplay loop muted src="./resources/videos_compressed/failure_case_Go2_biped.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video controls playsinline autoplay loop muted src="./resources/videos_compressed/failure_case_Go2W_biped.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+
+</body>
+
+<script>
+  var mainLoopId = setInterval(function(){
+        $('video').not('#teaser').each(function(){
+      if ($(this).is(":in-viewport")) {
+          $(this)[0].play();
+      } else {
+          $(this)[0].pause();
+      }
+      })
+    },200);
+</script>
+
+</html>
